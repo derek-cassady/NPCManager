@@ -35,20 +35,22 @@ def register():
         hashed_password = generate_password_hash(password)
 
         # Insert new user into the database
+        # Prepare the cursor
         cursor = mysql.connection.cursor()
         try:
-            cursor.execute(''' INSERT INTO users (username, email, password) VALUES (%s, %s, %s) ''', (username, email, hashed_password))
+            # Insert the user with is_active set to 0 (False)
+            cursor.execute('''INSERT INTO users (username, email, password, is_active) VALUES (%s, %s, %s, %s)''', 
+                           (username, email, hashed_password, 0))
             mysql.connection.commit()
-            flash('You were successfully registered! Please login.')
+            flash('You were successfully registered! Your account is pending approval.')
             return redirect(url_for('login'))
         except Exception as e:
-            # Rollback in case of error
             mysql.connection.rollback()
-            flash('Registration failed. User might already exist.')
+            flash('Registration failed. There might be a problem with your registration details.')
             return redirect(url_for('register'))
         finally:
-            # Ensure the database connection is closed
             cursor.close()
+    return render_template('register.html')
 
     # Render the registration form template
     return render_template('register.html')

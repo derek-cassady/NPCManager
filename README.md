@@ -23,7 +23,8 @@ npcmanager
  ┃ ┃ ┃ ┣ username
  ┃ ┃ ┃ ┣ password
  ┃ ┃ ┃ ┣ email
- ┃ ┃ ┃ ┣ created_at 
+ ┃ ┃ ┃ ┣ created_at
+ ┃ ┃ ┃ ┣ is_active 
  ┃ ┃ ┗ Indexes
  ┃ ┃ ┗ Foreign Keys
  ┃ ┃ ┗ Triggers
