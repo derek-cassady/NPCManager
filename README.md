@@ -3,7 +3,7 @@
  ┃ ┣ auth.py
  ┃ ┣ dashboard.py
  ┃ ┗ __init__.py
- ┣ database
+ ┣ models
  ┃ ┗ __init__.py
  ┣ static
  ┃ ┗ css
