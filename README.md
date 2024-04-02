@@ -1,6 +1,10 @@
 # npcmanager
-
-npcmanager
+ ┣ blueprints
+ ┃ ┣ auth.py
+ ┃ ┣ dashboard.py
+ ┃ ┗ __init__.py
+ ┣ database
+ ┃ ┗ __init__.py
  ┣ static
  ┃ ┗ css
  ┃ ┃ ┗ style.css
