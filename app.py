@@ -1,5 +1,6 @@
 from flask import Flask
-from flask_mysqldb import MySQL
+# Import the init_app function from the database module
+from database import init_app as init_database_app
 # Import your Blueprints here
 from blueprints.auth import auth_blueprint
 from blueprints.dashboard import dashboard_blueprint
